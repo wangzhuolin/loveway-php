@@ -18,6 +18,7 @@ if ($REWRITE) {
     parse_str($_GET['args'], $QueryArr);
 } else {
     $pageName = $_GET['page'];
+    $cardID = $_GET['id'];
 }
 if (empty($QueryArr)) {
     $QueryArr = $_GET;
@@ -32,10 +33,6 @@ switch ($pageName) {
     case "submit":
         include('./pages/submit.php');
         listActive('submit');
-        break;
-    case "more":
-        include('./pages/more.php');
-        listActive('more');
         break;
     case "about":
         include('./pages/about.php');

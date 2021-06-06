@@ -1,7 +1,7 @@
 <?php
 function pdoConnect()
 {
-    return new PDO('mysql:host=' . $GLOBALS['DB_HOST'] . ';dbname=' . $GLOBALS['DB_NAME'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASS']);
+    return new PDO('mysql:host=' . $GLOBALS['DB_HOST'] . ';port=3306;dbname=' . $GLOBALS['DB_NAME'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASS']);
 }
 
 function get_http_type()
@@ -22,7 +22,7 @@ function listActive($pageName)
 {
 ?>
     <script>
-        pageArr = ['homePage', 'submitPage', 'morePage', 'aboutPage'];
+        pageArr = ['homePage', 'submitPage', 'aboutPage'];
         for (let i = 0; i < pageArr.length; i++) {
             if ($("#" + pageArr[i]).hasClass("mdui-list-item-active")) {
                 $("#" + pageArr[i]).removeClass("mdui-list-item-active");
@@ -47,7 +47,7 @@ function getInfo($name)
         }
     } catch (Exception $e) {
         include('./pages/err.php');
-        //echo $e->getMessage();
+        // echo $e->getMessage();
     }
 }
 

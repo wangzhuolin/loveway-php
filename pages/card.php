@@ -23,8 +23,9 @@
         xhr.open('get', 'https://static.llilii.cn/json/img_list.json');
         xhr.send(null);
     }
-
-    document.getElementById('pjax-container').style = 'max-width: 400px;';
+    $(function() {
+        document.getElementById('pjax-container').style = 'max-width: 400px;';
+    })
 </script>
 
 <?php
@@ -34,8 +35,7 @@ try {
     $stmt->bindValue(1, $cardID);
     if ($stmt->execute()) {
         $rows = $stmt->fetchAll();
-        $row = $rows[0];
-?>
+        $row = $rows[0]; ?>
         <div class="mdui-card mdui-hoverable" style="border-radius: 16px;">
             <div class="mdui-card-header">
                 <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=<?php echo $row['contact']; ?>" />
@@ -45,13 +45,14 @@ try {
             <div class="mdui-card-media">
                 <?php
                 if (!empty($row['image'])) {
-                ?>
+                    ?>
                     <img style="max-height: 1000px" onerror="randomImage()" src="<?php echo $row['image']; ?>" />
                 <?php
                 } else {
-                ?>
+                    ?>
                     <div class="mdui-divider"></div>
-                <?php } ?>
+                <?php
+                } ?>
             </div>
             <div class="mdui-card-primary">
                 <div class="mdui-card-primary-title">To <?php echo $row['to_who']; ?></div>
@@ -66,12 +67,11 @@ try {
                 <a class="copy mdui-btn mdui-btn-icon mdui-float-right" href="javascript:void(0);" data-clipboard-text="
                             <?php
                             echo get_http_type() . $_SERVER['SERVER_NAME'];
-                            if ($REWRITE) {
-                                echo "/card/" . $row['id'];
-                            } else {
-                                echo '/?page=card&id=' . $row['id'];
-                            }
-                            ?>
+        if ($REWRITE) {
+            echo "/card/" . $row['id'];
+        } else {
+            echo '/?page=card&id=' . $row['id'];
+        } ?>
                             "><i class="mdui-icon material-icons">share</i></a>
                 </a>
             </div>

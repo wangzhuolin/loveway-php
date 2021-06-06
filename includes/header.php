@@ -46,7 +46,7 @@ error_reporting(0);
             <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white " onclick="inst.toggle();"><i class="mdui-icon material-icons">menu</i></span>
             <a href="../" class="mdui-typo-headline mdui-hidden-xs"><?php echo $siteTitle; ?></a>
             <div class="mdui-toolbar-spacer"></div>
-            <button id="logout" onclick='window.open("https://www.wunote.cn")' mdui-tooltip="{content: '吴先森的笔记'}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"><i class="mdui-icon material-icons">code</i></button>
+            <button id="logout" onclick="window.open('https://cloudbase.net/')" mdui-tooltip="{content: '云开发 CloudBase'}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"><i class="mdui-icon material-icons">code</i></button>
         </div>
     </header>
     <div class="mdui-drawer" id="main-drawer">
@@ -60,11 +60,6 @@ error_reporting(0);
                             else echo '/?page='; ?>submit" id="submitPage" class="mdui-list-item mdui-ripple" style="border-radius: 16px;">
                     <i class="mdui-list-item-icon mdui-icon material-icons">favorite</i>
                     <div class="mdui-list-item-content"><?php echo getInfo('submit') ?></div>
-                </a>
-                <a href="<?php if ($REWRITE) echo '/';
-                            else echo '/?page='; ?>more" id="morePage" class="mdui-list-item mdui-ripple" style="border-radius: 16px;">
-                    <i class="mdui-list-item-icon mdui-icon material-icons">tag_faces</i>
-                    <div class="mdui-list-item-content"><?php echo getInfo('more') ?></div>
                 </a>
                 <a href="<?php if ($REWRITE) echo '/';
                             else echo '/?page='; ?>about" id="aboutPage" class="mdui-list-item mdui-ripple" style="border-radius: 16px;">

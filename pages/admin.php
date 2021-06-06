@@ -28,14 +28,6 @@ if ($templateMode) {
             <textarea id="audio" class="mdui-textfield-input" placeholder="<?php echo getInfo('audio') ?>"></textarea>
         </div>
         <div class="mdui-textfield">
-            <label class="mdui-textfield-label">自定义页面标题（本站右侧应用栏的第三个列表）</label>
-            <textarea id="more" class="mdui-textfield-input" placeholder="<?php echo getInfo('more') ?>"></textarea>
-        </div>
-        <div class="mdui-textfield">
-            <label class="mdui-textfield-label">自定义页面（请使用html格式、本站右侧应用栏的第三个列表）</label>
-            <textarea id="more_content" class="mdui-textfield-input" rows="4" placeholder="<?php echo getInfo('more_content') ?>"></textarea>
-        </div>
-        <div class="mdui-textfield">
             <label class="mdui-textfield-label">关于本站页面（请使用html格式）</label>
             <textarea id="about_content" class="mdui-textfield-input" rows="4" placeholder="<?php echo getInfo('about_content') ?>"></textarea>
         </div>
@@ -72,7 +64,7 @@ if ($templateMode) {
         }
 
         function submit() {
-            configArr = ['title', 'keywords', 'description', 'audio', 'more', 'more_content', 'about_content'];
+            configArr = ['title', 'keywords', 'description', 'audio', 'about_content'];
             for (let i = 0; i < configArr.length; i++) {
                 if ($("#" + configArr[i]).val() != "") {
                     value = $("#" + configArr[i]).val();
