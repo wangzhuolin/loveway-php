@@ -18,6 +18,7 @@ if ($REWRITE) {
     parse_str($_GET['args'], $QueryArr);
 } else {
     $pageName = $_GET['page'];
+    $cardID = $_GET['id'];
 }
 if (empty($QueryArr)) {
     $QueryArr = $_GET;
