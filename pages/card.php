@@ -24,7 +24,9 @@
         xhr.send(null);
     }
 
-    document.getElementById('pjax-container').style = 'max-width: 400px;';
+    $(function() {
+        document.getElementById('pjax-container').style = 'max-width: 400px;';
+    });
 </script>
 
 <?php
